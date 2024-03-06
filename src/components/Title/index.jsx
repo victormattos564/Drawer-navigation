@@ -1,12 +1,12 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import { View, Text } from 'react-native'
 
-export default class Title extends Component {
-  render() {
-    return (
-      <View>
-        <Text>Title</Text>
-      </View>
-    )
-  }
+import styles from './styles'
+const Title = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Title</Text>
+    </View>
+  )
 }
+
+export default Title

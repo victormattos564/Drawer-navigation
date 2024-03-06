@@ -1,20 +1,24 @@
+import 'react-native-gesture-handler';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Home from './src/screens/Home';
+import Contact from './src/screens/Contact';
+import Profile from './src/screens/Profile';
 
 export default function App() {
+
+  const Drawer = createDrawerNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!😎</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+       <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Contact" component={Contact} />
+      <Drawer.Screen name="Profile" component={Profile} />
+    </Drawer.Navigator>
+
+    <StatusBar style="auto" />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
